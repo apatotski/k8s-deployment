@@ -55,10 +55,10 @@ sudo curl -L https://github.com/opencontainers/runc/releases/download/v1.1.4/run
 sudo install -m 755 runc.amd64 /usr/local/sbin/runc
 sudo rm runc.amd64
 
-sudo curl -L https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz -o cni-plugins-linux-amd64-v1.1.1.tgz
+sudo curl -L https://github.com/containernetworking/plugins/releases/download/v1.2.0/cni-plugins-linux-amd64-v1.2.0.tgz -o cni-plugins-linux-amd64-v1.2.0.tgz
 sudo mkdir -p /opt/cni/bin
-sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz
-sudo rm cni-plugins-linux-amd64-v1.1.1.tgz
+sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.2.0.tgz
+sudo rm cni-plugins-linux-amd64-v1.2.0.tgz
 
 
 echo "
