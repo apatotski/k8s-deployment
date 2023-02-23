@@ -36,15 +36,10 @@ sudo sysctl -p
 sudo sh -c 'cat << EOF > /etc/keepalived/keepalived.conf
 vrrp_instance VI_1 {
     interface ens160
-    state MASTER   #Set MASTER or BACKUP
+    state BACKUP
     virtual_router_id 146
     priority 100  # set priority
     advert_int 2
-    unicast_src_ip 192.168.205.146 #IP of this device
-    unicast_peer{
-        192.168.205.147 #IP of peer device
-        192.168.205.148 #IP of peer device
-    }
     authentication {
         auth_type PASS
         auth_pass monkey146
