@@ -35,10 +35,10 @@ EOF
 # Apply sysctl params without reboot
 sudo sysctl --system
 
-sudo curl -L https://github.com/containerd/containerd/releases/download/v1.6.8/containerd-1.6.8-linux-amd64.tar.gz -o containerd-1.6.8-linux-amd64.tar.gz
+sudo curl -L https://github.com/containerd/containerd/releases/download/v1.6.18/containerd-1.6.18-linux-amd64.tar.gz -o containerd-1.6.18-linux-amd64.tar.gz
 
-sudo tar Cxzvf /usr/local containerd-1.6.8-linux-amd64.tar.gz
-sudo rm containerd-1.6.8-linux-amd64.tar.gz
+sudo tar Cxzvf /usr/local containerd-1.6.18-linux-amd64.tar.gz
+sudo rm containerd-1.6.18-linux-amd64.tar.gz
 
 sudo mkdir /etc/containerd
 sudo sh -c "containerd config default > /etc/containerd/config.toml"
