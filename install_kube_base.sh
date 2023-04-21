@@ -16,6 +16,8 @@ sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://pack
 echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 
 sudo apt-get update
+#apt list -a kubeadm
+#sudo apt-get install -y kubelet=1.26.1-00 kubeadm=1.26.1-00  kubectl=1.26.1-00
 sudo apt-get install -y kubelet kubeadm kubectl
 sudo apt-mark hold kubelet kubeadm kubectl
 
@@ -37,6 +39,7 @@ EOF
 # Apply sysctl params without reboot
 sudo sysctl --system
 
+#containerd --version
 sudo curl -L https://github.com/containerd/containerd/releases/download/v1.6.18/containerd-1.6.18-linux-amd64.tar.gz -o containerd-1.6.18-linux-amd64.tar.gz
 
 sudo tar Cxzvf /usr/local containerd-1.6.18-linux-amd64.tar.gz
@@ -52,6 +55,7 @@ sudo curl -L https://raw.githubusercontent.com/containerd/containerd/main/contai
 sudo systemctl daemon-reload
 sudo systemctl enable --now containerd
 
+#runc --version 
 sudo curl -L https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.amd64 -o runc.amd64
 
 sudo install -m 755 runc.amd64 /usr/local/sbin/runc
